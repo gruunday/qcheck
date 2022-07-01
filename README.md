@@ -14,7 +14,7 @@ This is just a wrapper script around quota -a, therefore quota should be install
   | After 3 failed login attempts, your connection is banned for 1 hour. |
   ------------------------------------------------------------------------
 
-Storage space report for tdtest1's SoC account:
+Storage space report for user's SoC account:
      storage: |==============                     | 40%,  393MB used,  583MB free
   file count: |===========                        | 34%, 6822Used,    13178Free
 ```
