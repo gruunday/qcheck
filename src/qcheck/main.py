@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 # Modified version of https://github.com/redbrick/rbquota/blob/071c16f2e3e3b618d4e5b36f9c67c3f3de99e838/rbquota
-# Desc: Pretty display of RedBrick quota usage
+# Desc: Pretty display of quota usage
 # Auth: Charlie Von Metzradt <phaxx@redbrick.dcu.ie>
-# Maintainer: Tom Doyle <greenday@redbrick.dcu.ie>
+# Maintainer: Tom Doyle <gruunday@gmail.com>
 # Date: Sat Oct  8 16:11:42 IST 2005
 # Last Update: Mon May 11 12:45:21 IST 2020
 
@@ -58,8 +58,6 @@ def run():
     values = quota[2].split()
     blocks = [ int(''.join(i for i in values[x] if i.isdigit())) for x in range(1,4)]
     files = [ int(''.join(i for i in values[x] if i.isdigit())) for x in range(5,8)]
-    #blocks = [int(values[1]), int(values[2]), int(values[3]), int(values[4])]
-    #files = [int(values[5]), int(values[6]), int(values[7]), int(values[8])]
     
     # if you change the bar width, you'll also need to change the value in the
     # format string below.

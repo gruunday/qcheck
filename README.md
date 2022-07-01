@@ -5,21 +5,19 @@ A script to display user quota info graphically on the terminal
 
 This is just a wrapper script around quota -a, therefore quota should be installed and users should have access to it
 
-
-## Contributing
-
-After making a change you will have to bump the version in setup.cfg for the package to build automatically with git
-
-
-## Install with pip from git package repo
-
-To install you will need access to the project and use your personal access token
-
 ```bash
-pip3 install --upgrade qcheck --extra-index-url https://__token__:<REDACTED>@gitlab.computing.dcu.ie/api/v4/projects/10226/packages/pypi/simple
-```
+---------------[ Welcome to DCU Computing Student Server ]-------------------
+----------------------[ linuxadmin@computing.dcu.ie ]------------------------
 
-This should automatically install the qcheck command to `/usr/local/bin/qcheck`
+  ------------------------------[ Note ]----------------------------------
+  |           Please note the following login restrictions:              |
+  | After 3 failed login attempts, your connection is banned for 1 hour. |
+  ------------------------------------------------------------------------
+
+Storage space report for tdtest1's SoC account:
+     storage: |==============                     | 40%,  393MB used,  583MB free
+  file count: |===========                        | 34%, 6822Used,    13178Free
+```
 
 
 ## Install and build locally
@@ -34,3 +32,11 @@ python3 -m build
 pip3 install dist/qcheck...*...whl
 ```
 
+
+## Cool use cases
+
+You can have qcheck run on login for a user by placing the following in `/etc/profile.d/motd.sh`
+
+```
+/usr/local/bin/qcheck $USER
+```
