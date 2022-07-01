@@ -6,15 +6,7 @@ A script to display user quota info graphically on the terminal
 This is just a wrapper script around quota -a, therefore quota should be installed and users should have access to it
 
 ```bash
----------------[ Welcome to DCU Computing Student Server ]-------------------
-----------------------[ linuxadmin@computing.dcu.ie ]------------------------
-
-  ------------------------------[ Note ]----------------------------------
-  |           Please note the following login restrictions:              |
-  | After 3 failed login attempts, your connection is banned for 1 hour. |
-  ------------------------------------------------------------------------
-
-Storage space report for user's SoC account:
+Storage space report for user's account:
      storage: |==============                     | 40%,  393MB used,  583MB free
   file count: |===========                        | 34%, 6822Used,    13178Free
 ```
