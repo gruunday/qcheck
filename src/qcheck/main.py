@@ -57,6 +57,10 @@ def run():
     cmd = f"/usr/bin/quota -p -w -Q {username}" 
     quota = get_quota(cmd, 5)
     quota = quota.decode("utf-8")
+    if not quota:
+      print(f"\nError: no quota set for user {username}\n")
+      sys.exit(533)
+    
     
     # split the output into a list.
     quota = quota.split("\n")
