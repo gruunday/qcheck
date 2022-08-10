@@ -39,12 +39,19 @@ def colour(percent):
     else:
         return 32 # green
 
+def quota_installed():
+    process = subprocess.Popen(["which quota"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return process.stdout.read().decode("utf-8")
 
 def run():
     if len(sys.argv) == 2:
         username = sys.argv[1]
     else:
         username = ""
+
+    if not quota_installed():
+      print("\nError: quota package not installed or not in $PATH\n")
+      sys.exit(532)
     
     # run quota, read in the output.
     cmd = f"/usr/bin/quota -p -w -Q {username}" 
